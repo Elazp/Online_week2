@@ -1,0 +1,24 @@
+<h1>List of laptops</h1> 
+<% @laptops.each do |laptop|%>
+<div><%= laptop.title %> <%= link_to 'Show',  laptop_path(laptop)%>
+ 	<%= link_to 'Edit', edit_laptop_path(laptop) %>
+ 	<%= link_to 'Destroy', laptop_path(laptop), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>
+
+<p>
+    <%= link_to 'New laptop', new_laptop_path %>
+</p>
+
+
+<h1>List of backpacks</h1> 
+<% @backpacks.each do |backpack|%>
+<div><%= backpack.title %> <%= link_to 'Show',  backpack_path(backpack)%>
+ 	<%= link_to 'Edit', edit_backpack_path(backpack) %>
+ 	<%= link_to 'Destroy', backpack_path(backpack), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>
+
+<p>
+    <%= link_to 'New backpack', new_backpack_path %>
+</p>

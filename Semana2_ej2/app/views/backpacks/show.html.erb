@@ -1,0 +1,14 @@
+<h3>
+  <strong>Title:</strong>
+  <%= @backpack.title %>
+</h3>
+
+<p>
+  <strong>Text:</strong>
+  <%= @backpack.text %>
+</p>
+
+<p>
+    <%= link_to 'Edit', edit_backpack_path(@backpack)%> |
+    <%= link_to 'Back', laptops_path%>
+</p>

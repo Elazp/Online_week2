@@ -1,0 +1,210 @@
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateLaptops (20150418232905)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "laptops" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "text" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150418232905"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (15.9ms)[0m  [1mINSERT INTO "laptops" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "My first article"], ["text", "Welcome to my blog!"], ["created_at", "2015-04-18 23:30:05.747197"], ["updated_at", "2015-04-18 23:30:05.747197"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "laptops" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Learning Rails"], ["text", "Rails is awesome!"], ["created_at", "2015-04-18 23:30:05.788939"], ["updated_at", "2015-04-18 23:30:05.788939"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2015-04-19 01:33:38 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LaptopsController#index as HTML
+  [1m[35mLaptop Load (0.3ms)[0m  SELECT "laptops".* FROM "laptops"
+  Rendered laptops/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 4148ms (Views: 4100.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/laptops.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-19 01:33:43 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-19 01:33:43 +0200
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-19 01:33:43 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-19 01:33:43 +0200
+
+
+Started GET "/assets/laptops.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-19 01:33:43 +0200
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-19 01:33:43 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-19 01:33:43 +0200
+
+
+Started GET "/" for ::1 at 2015-04-19 01:35:55 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LaptopsController#index as HTML
+  [1m[35mLaptop Load (0.3ms)[0m  SELECT "laptops".* FROM "laptops"
+  Rendered laptops/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 641ms (Views: 609.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-04-19 01:35:56 +0200
+Processing by LaptopsController#index as HTML
+  [1m[36mLaptop Load (0.2ms)[0m  [1mSELECT "laptops".* FROM "laptops"[0m
+  Rendered laptops/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 42ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/laptops.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-19 01:35:56 +0200
+
+
+Started GET "/" for ::1 at 2015-04-19 01:37:53 +0200
+Processing by LaptopsController#index as HTML
+  [1m[35mLaptop Load (0.2ms)[0m  SELECT "laptops".* FROM "laptops"
+  Rendered laptops/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 136ms (Views: 135.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/laptops.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-19 01:37:53 +0200
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-19 01:37:53 +0200
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-19 01:37:53 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-19 01:37:53 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-19 01:37:53 +0200
+
+
+Started GET "/assets/laptops.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-19 01:37:53 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-19 01:37:53 +0200
+
+
+Started GET "/laptops/1" for ::1 at 2015-04-19 01:37:57 +0200
+Processing by LaptopsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLaptop Load (0.3ms)[0m  [1mSELECT  "laptops".* FROM "laptops" WHERE "laptops"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered laptops/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 73ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-04-19 01:42:38 +0200
+Processing by LaptopsController#index as HTML
+  [1m[35mLaptop Load (0.8ms)[0m  SELECT "laptops".* FROM "laptops"
+  Rendered laptops/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 250ms (Views: 233.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/laptops.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-19 01:42:38 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-19 01:42:38 +0200
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-19 01:42:38 +0200
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-19 01:42:38 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-19 01:42:38 +0200
+
+
+Started GET "/assets/laptops.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-19 01:42:39 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-19 01:42:39 +0200
+
+
+Started GET "/" for ::1 at 2015-04-19 01:44:35 +0200
+Processing by LaptopsController#index as HTML
+  [1m[36mLaptop Load (0.4ms)[0m  [1mSELECT "laptops".* FROM "laptops"[0m
+  Rendered laptops/index.html.erb within layouts/application (73.2ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined local variable or method `portatil' for #<#<Class:0x007fe1e00c2898>:0x007fe1e00c1d80>):
+    2: <% @laptops.each do |laptop|%>
+    3: <div><%= laptop.title %> <%= link_to 'Show',  laptop_path(laptop)%>
+    4:  	<%= link_to 'Edit', edit_laptop_path(laptop) %>
+    5:  	<%= link_to 'Destroy', portatil_path(portatil), method: :delete, data: { confirm: 'Are you sure?' } %>
+    6: </div>
+    7: <% end %>
+    8: 
+  app/views/laptops/index.html.erb:5:in `block in _app_views_laptops_index_html_erb___437454156627792845_70304051627160'
+  app/views/laptops/index.html.erb:2:in `_app_views_laptops_index_html_erb___437454156627792845_70304051627160'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (30.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (281.8ms)
+
+
+Started GET "/" for ::1 at 2015-04-19 01:45:34 +0200
+Processing by LaptopsController#index as HTML
+  [1m[35mLaptop Load (0.3ms)[0m  SELECT "laptops".* FROM "laptops"
+  Rendered laptops/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-19 01:45:34 +0200
+
+
+Started GET "/assets/laptops.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-19 01:45:34 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-19 01:45:34 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-19 01:45:34 +0200
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-19 01:45:34 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-19 01:45:34 +0200
+
+
+Started GET "/assets/laptops.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-19 01:45:34 +0200
+
+
+Started GET "/laptops/1/edit" for ::1 at 2015-04-19 01:45:38 +0200
+Processing by LaptopsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLaptop Load (0.2ms)[0m  [1mSELECT  "laptops".* FROM "laptops" WHERE "laptops"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered laptops/edit.html.erb within layouts/application (198.7ms)
+Completed 200 OK in 327ms (Views: 324.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/laptops/1" for ::1 at 2015-04-19 01:45:42 +0200
+Processing by LaptopsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLaptop Load (0.2ms)[0m  SELECT  "laptops".* FROM "laptops" WHERE "laptops"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered laptops/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/laptops/new" for ::1 at 2015-04-19 01:45:46 +0200
+Processing by LaptopsController#new as HTML
+  Rendered laptops/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 70ms (Views: 68.3ms | ActiveRecord: 0.0ms)

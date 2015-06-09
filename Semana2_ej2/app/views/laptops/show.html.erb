@@ -1,0 +1,14 @@
+<h3>
+  <strong>Title:</strong>
+  <%= @laptop.title %>
+</h3>
+
+<p>
+  <strong>Text:</strong>
+  <%= @laptop.text %>
+</p>
+
+<p>
+    <%= link_to 'Edit', edit_laptop_path(@laptop)%> |
+    <%= link_to 'Back', laptops_path%>
+</p>
